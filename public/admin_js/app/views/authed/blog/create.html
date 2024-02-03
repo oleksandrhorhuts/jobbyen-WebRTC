@@ -1,0 +1,107 @@
+<link href="admin_css/plugins/select2/select2.min.css" rel="stylesheet">
+<script src="admin_js/plugins/select2/select2.full.min.js"></script>
+
+
+<div class="wrapper wrapper-content animated fadeInRight bs-loading-container" bs-loading-overlay>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12 b-r">
+                            <h3 class="m-t-none m-b">Opret en blog</h3>
+                            <form role="form">
+
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="form-group"><label>Navn<span
+                                                    class="text-danger">&nbsp;*</span></label> <input type="text"
+                                                ng-model="blog.name" class="form-control required"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="form-group"><label>Description<span
+                                                    class="text-danger">&nbsp;*</span></label>
+
+                                            <!-- <textarea ng-model="blog.description" class="form-control" cols="50"
+                                                rows="4"></textarea></div> -->
+
+                                                <text-angular name="htmlcontenttwo" ng-model="blog.description">
+                                                </text-angular>
+                                                </div>
+                                                
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+
+                                                    <div class="social-feed-box">
+                                                        <div class="ibox">
+                                                            <div class="ibox-title"
+                                                                style="display:flex;justify-content:space-between;align-items:center;">
+                                                                <h5 style="margin-bottom:0px;">Billeder</h5>
+                                                                <div class="ibox-tools">
+                                                                    <a href="" class="btn btn-primary btn-xs"
+                                                                        ng-click="add_image()"
+                                                                        style="padding-bottom:0px;margin-left:0px;margin-bottom:0px;"><i
+                                                                            class="fa fa-plus"></i></a>
+                                                                    <input id="file-upload" type="file" multiple
+                                                                        accept=".png, .jpg, .jpeg"
+                                                                        onchange="angular.element(this).scope().photofileChanged(this.files)"
+                                                                        style="display: none;" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="ibox-content">
+                                                                <div class="project-list">
+                                                                    <table class="table table-hover"
+                                                                        style="margin-bottom:0px;">
+                                                                        <tbody>
+                                                                            <tr ng-repeat="image in blog_files">
+                                                                                <td class="project-title">
+                                                                                    <img ng-src="{{image}}" style="width:100px;height:auto;" />
+                                                                                </td>
+                                                                                <td class="project-title">
+                                                                                    {{$index + 1}}
+                                                                                </td>
+                                                                                <td class="project-actions">
+                                                                                    <a href="javascript:;"
+                                                                                        class="btn btn-white btn-sm"
+                                                                                        ng-click="remove_image($index)"><i
+                                                                                            class="fa fa-trash"></i></a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button class="btn btn-primary" type="button"
+                                            ng-click="create_blog()">Opret</button>
+                                    </div>
+
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

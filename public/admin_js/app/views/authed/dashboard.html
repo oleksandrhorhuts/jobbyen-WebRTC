@@ -1,0 +1,277 @@
+<!-- [ content ] Start -->
+<div class="container-fluid flex-grow-1 container-p-y bs-loading-container" bs-loading-overlay>
+    <div class="row">
+        <!-- first card start -->
+        <!-- Staustic card 11 Start -->
+
+        <div class="col-xl-3 col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>Betalte jobsøgende</h5>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <label class="badge badge-pill badge-primary">{{dashboard.jobseeker_rate}}% <i
+                                    class="m-l-10 feather icon-arrow-up"></i></label>
+                        </div>
+                        <div class="col text-right">
+                            <h5 class="mb-0">{{dashboard.paid_jobseekers}}</h5>
+                        </div>
+                    </div>
+                    <div class="progress mt-1">
+                        <div class="progress-bar bg-primary" ng-style="{'width' : dashboard.jobseeker_rate + '%'}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>Betalte virksomhed</h5>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <label class="badge badge-pill badge-success">{{dashboard.employer_rate}}% <i
+                                    class="m-l-10 feather icon-arrow-down"></i></label>
+                        </div>
+                        <div class="col text-right">
+                            <h5 class="mb-0">{{dashboard.paid_employers}}</h5>
+                        </div>
+                    </div>
+                    <div class="progress mt-1">
+                        <div class="progress-bar bg-success" ng-style="{'width' : dashboard.employer_rate + '%'}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>Space Remain</h5>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <label class="badge badge-pill badge-danger">8% <i
+                                    class="m-l-10 feather icon-arrow-down"></i></label>
+                        </div>
+                        <div class="col text-right">
+                            <h5 class="mb-0">15 BG</h5>
+                        </div>
+                    </div>
+                    <div class="progress mt-1">
+                        <div class="progress-bar bg-danger" style="width:15%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>New Followers</h5>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <label class="badge badge-pill text-white badge-warning">15% <i
+                                    class="m-l-10 feather icon-arrow-down"></i></label>
+                        </div>
+                        <div class="col text-right">
+                            <h5 class="mb-0">55+</h5>
+                        </div>
+                    </div>
+                    <div class="progress mt-1">
+                        <div class="progress-bar bg-warning" style="width:35%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Staustic card 11 end -->
+        <!-- Second card start -->
+
+        <div class="col-xl-6 col-md-6">
+            <div class="card">
+                <div class="card-header" style="font-weight: 600;font-size:14px;">
+                    Jobsøgende
+                </div>
+                <div class="card-body">
+                    <div class="col-xl-12 col-md-12">
+                        <div class="card d-flex w-100 mb-4">
+                            <div class="row no-gutters row-bordered row-border-light h-100">
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-users display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.jobseekers}}</span>
+                                            <br>
+                                            <small class="text-muted">Total Jobseekers</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-leaf display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.cv_users}}</span>
+                                            <br>
+                                            <small class="text-muted">CV</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-users display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.jobseeker_level_1}}</span>
+                                            <br>
+                                            <small class="text-muted">Basic pakke</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-users display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.jobseeker_level_2}}</span>
+                                            <br>
+                                            <small class="text-muted">Pro Pakke</small>
+                                        </span>
+                                    </div>
+                                </div>
+            
+                            </div>
+                        </div>
+                        <div class="card d-flex w-100 mb-4">
+                            <div class="row no-gutters row-bordered row-border-light h-100">
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-book display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.total_jobs}}</span>
+                                            <br>
+                                            <small class="text-muted">Samlede job</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-book display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.cron_jobs}}</span>
+                                            <br>
+                                            <small class="text-muted">Cron Jobs</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-book display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.company_active_jobs}}</span>
+                                            <br>
+                                            <small class="text-muted">Virksomhedens aktive job</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-book display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.company_pending_jobs}}</span>
+                                            <br>
+                                            <small class="text-muted">Virksomhed, der afventer job</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-6 col-md-6">
+            <div class="card">
+                <div class="card-header" style="font-weight: 600;font-size:14px;">
+                    Virksomheder
+                </div>
+                <div class="card-body">
+                    <div class="col-xl-12 col-md-12">
+                        <div class="card d-flex w-100 mb-4">
+                            <div class="row no-gutters row-bordered row-border-light h-100">
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-apartment display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.employers}}</span>
+                                            <br>
+                                            <small class="text-muted">Virksomheder</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-apartment display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.employer_level_1}}</span>
+                                            <br>
+                                            <small class="text-muted">Gør-det-selv</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-apartment display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.employer_level_2}}</span>
+                                            <br>
+                                            <small class="text-muted">Introtilbud</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-apartment display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.employer_level_3}}</span>
+                                            <br>
+                                            <small class="text-muted">Pro Pakke</small>
+                                        </span>
+                                    </div>
+                                </div>
+            
+                            </div>
+                        </div>
+                        <div class="card d-flex w-100 mb-4">
+                            <div class="row no-gutters row-bordered row-border-light h-100">
+            
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-camera-video display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.interviews}}</span>
+                                            <br>
+                                            <small class="text-muted">Interviews</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex col-sm-6 align-items-center">
+                                    <div class="card-body media align-items-center text-dark">
+                                        <i class="lnr lnr-inbox display-4 d-block text-danger"></i>
+                                        <span class="media-body d-block ml-3">
+                                            <span class="text-big mr-1 text-danger">{{dashboard.messages}}</span>
+                                            <br>
+                                            <small class="text-muted">Beskeder</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+        
+
+
+    </div>
+</div>

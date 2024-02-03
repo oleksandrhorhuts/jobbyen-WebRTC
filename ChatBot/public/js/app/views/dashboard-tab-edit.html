@@ -1,0 +1,64 @@
+<div class="col-sm-12 col-lg-12 col-xl-12 mt30">
+    <div class="my_profile_form_area">
+        <div class="row">
+            <div class="col-lg-12 d-flex align-items-center">
+                <h4 class="fz20 mb20" ng-if="tab.index">{{tab.index}}.{{tab.title}} <i class="fa fa-edit" ng-click="edit_tab_title()" style="cursor:pointer;"></i></h4> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-sm-12 col-lg-12 col-xl-12">
+    <div class="my_profile_form_area">
+        <div class="row" style="min-height:300px;height:auto;">
+            <div class="col-lg-12">
+                <div class="col-xl-8 pr-0">
+                    <div class="candidate_contact_form mb20">
+                        <form>
+                            <question-node ng-repeat="node in question_nodes" node="node" tab="tab_clone" key="$index"></question-node>
+                        </form>
+                        <h4 class="fz15" style="cursor:pointer;" ng-click="add_text_node()">+&nbsp;Add Text Node</h4>
+                        <h4 class="fz15" style="cursor:pointer;" ng-click="add_input_node()">+&nbsp;Add Input Node</h4>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row" style="min-height:300px;height:auto;border-top:1px solid #c2c2c2;">
+            <div class="col-lg-12 mt10">
+                <span class="flaticon-paper-plane">&nbsp;Reply buttons</span>
+                <div class="col-xl-12 pr-0">
+
+                    <div class="candidate_contact_form mb20">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="ui_kit_input">
+                                    <form>
+                                        <div class="form-group">
+                                            <h5 class="fz16 mb20">Replies</h5>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="ui_kit_select_box">
+                                    <h5 class="fz16 mb20">Goto</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <reply-node ng-repeat="reply_node in reply_nodes" node="reply_node" tab="tab_clone" key="$index"></reply-node>
+                        <h4 class="fz15" style="cursor:pointer;" ng-click="add_reply_node()">+&nbsp;Add Reply Node</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12 col-lg-8 col-xl-9">
+    <button type="button" class="btn btn-primary" ng-click="save_tab(tab.index)"><i class="fa fa-save"></i> Save Tab</button>
+    <button type="button" class="btn btn-danger" ng-click="delete_tab(tab.index)"><i class="fa fa-trash"></i> Delete Tab</button>
+    <button type="button" class="btn btn-warning" ng-click="refresh_tab(tab.index)"><i class="fa fa-refresh"></i> Initialize Tab</button>
+</div>

@@ -1,0 +1,167 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="manage-jobs-sec">
+                    <div class="row d-flex">
+                        <div class="col-lg-7 d-flex justify-content-center" style="margin:0 auto;">
+                            <div class="membership_summary invoice_summary" style="border-radius: 6px;">
+                                
+                                <div class="row mt-5">
+                                    <div class="col-md-12 text-center">
+                                        <img src="logo.svg" alt="logo" height="45px" />
+                                    </div>
+                                    <div class="col-md-6">
+                
+                                        <address>
+                                            <strong>{{company.company_name}}</strong><br>
+                                            {{company.company_address}}<br>
+                                            {{company.company_location.zip}} {{company.company_location.name}}<br>
+                                            CVR:{{company.company_cvr}}
+                                        </address>
+                
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <address>
+                                            <strong>Jobbyen ApS</strong><br>
+                                            Lind Hansens Vej 23<br>
+                                            5000 Odense C<br>
+                                            CVR:40592223
+                                        </address>
+                                        <div style="display: table; width: 100%;margin-top:20px;">
+                                            <div style="display: table-row;">
+                                                <div style="width: 50%; display: table-cell; font-size:14px;font-weight:500;">
+                                                    Fakturanummer
+                                                </div>
+                                                <div
+                                                    style="width: 50%; display: table-cell; text-align: right;font-size:14px;font-weight:500;">
+                                                    {{transaction.id}}
+                                                </div>
+                                            </div>
+                                            <div style="display: table-row;">
+                                                <div style="width: 50%; display: table-cell; font-size:14px;font-weight:500;">
+                                                    Fakturadato
+                                                </div>
+                                                <div
+                                                    style="width: 50%; display: table-cell; text-align: right;font-size:14px;font-weight:500;">
+                                                    {{transaction.created_at |  amUtc | amDateFormat:"DD MMMM YYYY"}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="col-md-12">
+                                        <h2 class="panel-title"><strong>Ordreoversigt</strong></h2>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <td width="55%"><strong>Beskrivelse</strong></td>
+                                                        <td width="16%" class="text-right"><strong>Pris</strong>
+                                                        </td>
+                                                        <td width="8%" class="text-right"><strong>Antal</strong>
+                                                        </td>
+                                                        <td width="21%" class="text-right"><strong>Totaler</strong>
+                                                        </td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-0">{{get_package(transaction.plan)}}</td>
+                                                        <td class="p-0 text-right">
+                                                            {{get_current_price(transaction.plan) | currency}}</td>
+                                                        <td class="p-0 text-right">1</td>
+                                                        <td class="p-0 text-right">
+                                                            {{get_current_price(transaction.plan) | currency}}</td>
+                                                    </tr>
+                                                    <tr ng-if="transaction.extra_1">
+                                                        <td class="p-0">LinkedIN</td>
+                                                        <td class="p-0 text-right">395,00 kr</td>
+                                                        <td class="p-0 text-right">1</td>
+                                                        <td class="p-0 text-right">395,00 kr</td>
+                                                    </tr>
+                                                    <tr ng-if="transaction.extra_2">
+                                                        <td class="p-0">Facebook</td>
+                                                        <td class="p-0 text-right">395,00 kr</td>
+                                                        <td class="p-0 text-right">1</td>
+                                                        <td class="p-0 text-right">395,00 kr</td>
+                                                    </tr>
+                                                    <tr ng-if="transaction.extra_3">
+                                                        <td class="p-0">Youtube</td>
+                                                        <td class="p-0 text-right">995,00 kr</td>
+                                                        <td class="p-0 text-right">1</td>
+                                                        <td class="p-0 text-right">995,00 kr</td>
+                                                    </tr>
+                                                    <tr ng-if="transaction.extra_4">
+                                                        <td class="p-0">Managing job seekers applications</td>
+                                                        <td class="p-0 text-right">7.995,00 kr</td>
+                                                        <td class="p-0 text-right">1</td>
+                                                        <td class="p-0 text-right">7.995,00 kr</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-bottom:20px;">
+                                    <div class="col-md-7">
+                
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h4>Subtotal</h4>
+                                                    <span class="price">
+                                                        {{transaction.sub_total | currency}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h4>Moms (25%)</h4>
+                                                    <span class="price">
+                                                        {{transaction.vat | currency}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h4>Total</h4>
+                                                    <span class="total_price">
+                                                        {{transaction.total | currency}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-3">
+                        <div class="col-lg-12 d-flex justify-content-center">
+                            <button type="button" ui-sref="authed.transaction.employer" class="btn btn-success"><i class="fa fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>

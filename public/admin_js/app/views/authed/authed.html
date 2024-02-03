@@ -1,0 +1,133 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element"> <span>
+                        <img alt="image" style="width:90px;"
+                            src="white_logo.png" />
+                    </span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" ui-sref="authed.dashboard" ng-click="remove_sidebar()"><i
+                        class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a>
+            </li>
+            <li ng-class="{'active' : $state.current.data.pageTitle == 'jobseeker'}">
+
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span class="nav-label">Jobsøgere</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse"
+                    ng-class="{'in' : $state.current.data.pageTitle == 'jobseeker'}">
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.jobseeker.create" ng-click="remove_sidebar()">Opret jobsøger</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.jobseeker.list" ng-click="remove_sidebar()">Liste over jobsøgere</a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+
+            <li ng-class="{'active' : $state.current.data.pageTitle == 'company'}">
+                <a href="#">
+                    <i class="fa fa-building-o"></i>
+                    <span class="nav-label">Virksomhed</span>
+                    <span class="fa arrow"></span>
+                </a>
+
+                <ul class="nav nav-second-level collapse"
+                    ng-class="{'in' : $state.current.data.pageTitle == 'company'}">
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.company.create" ng-click="remove_sidebar()">Opret viksomhed</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.company.list" ng-click="remove_sidebar()">Liste over virksomheder</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-money"></i>
+                    <span class="nav-label">Transaktioner</span>
+                    <span class="fa arrow"></span>
+                </a>
+
+                <ul class="nav nav-second-level collapse"
+                    ng-class="{'in' : $state.current.data.pageTitle == 'transaction'}">
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.transaction.employer"
+                            ng-click="remove_sidebar()">Virksomhed</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.transaction.jobseeker"
+                            ng-click="remove_sidebar()">Jobsøgere</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-newspaper-o"></i>
+                    <span class="nav-label">Blogs</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse"
+                    ng-class="{'in' : $state.current.data.pageTitle == 'blog'}">
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.blog.create" ng-click="remove_sidebar()">Opret blog</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.blog.list" ng-click="remove_sidebar()">Liste over blogs</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="nav-label">Extra</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse"
+                    ng-class="{'in' : $state.current.data.pageTitle == 'extra'}">
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.job_categories" ng-click="remove_sidebar()">Job Categories</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" ui-sref="authed.skills" ng-click="remove_sidebar()">Skills</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" ui-sref="authed.job_report" ng-click="remove_sidebar()"><i class="fa fa-file"></i>
+                    <span class="nav-label">Job Rapport</span></a>
+            </li>
+            <li>
+                <a href="javascript:;" ui-sref="authed.dashboard" ng-click="remove_sidebar()"><i class="fa fa-cog"></i>
+                    <span class="nav-label">System settings</span></a>
+            </li>
+            <li>
+                <a href="javascript:;" ui-sref="authed.cronapi" ng-click="remove_sidebar()"><i class="fa fa-key"></i>
+                    <span class="nav-label">API list</span></a>
+            </li>
+            <li>
+                <a href="javascript:;" ng-click="logout()"><i class="fa fa-sign-out"></i> <span class="nav-label">Log
+                        ud</span></a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div id="page-wrapper" class="gray-bg">
+    <div class="row border-bottom mobile-menu-bar">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            </div>
+        </nav>
+    </div>
+    <div ui-view class="fade-in-up"></div>
+</div>

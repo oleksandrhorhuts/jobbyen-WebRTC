@@ -1,0 +1,33 @@
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-3" style="height:100vh;">
+            <main-tab ng-repeat="tab in tabs" tab="tab">
+            </main-tab>
+            <new-tab ng-if="tabs.length == 0">
+            </new-tab>
+        </div>
+        <div class="col-md-7" style="border-left:1px solid #c2c2c2;">
+            <div ui-view class="fade-in-up"></div>
+        </div>
+        <div class="col-md-2">
+            <div class="row w-100 mt10">
+                <div class="col-md-12 pl-0 pr-0">
+                    <button class="btn btn-primary w-100" ng-click="generate()">
+                        <span class="flaticon-star"></span> Generate</button>
+                </div>
+            </div>
+            <div class="row w-100 mt10">
+                <div class="col-md-12 pl-0 pr-0">
+                    <button class="btn btn-success w-100" ng-click="simulate()">
+                        <span class="flaticon-star"></span> Simulate</button>
+                </div>
+            </div>
+            <div class="row w-100 mt10">
+                <div class="col-md-12 pl-0 pr-0">
+                    <button class="btn btn-success w-100" ng-click="init()">
+                        <span class="flaticon-star"></span> Initialize All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+
+
+
+<div class="middle-box text-center loginscreen animated fadeInDown">
+    <div>
+        <div style="margin-top:100px;">
+            <img src="/favicon.png" />
+        </div>
+        <form class="m-t" role="form" action="index.html">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Indtast e-mail adresse" ng-model="user_email" required="" ng-enter="submit_form()">
+            </div>
+            <div class="form-group">
+                <input type="password" id="admin_pwd_input" class="form-control" placeholder="Adgangskode" ng-model="user_pwd" required="" ng-enter="submit_form()">
+            </div>
+            <button type="button" class="btn btn-primary block full-width m-b" ng-click="authenticate()">Log Ind</button>
+        </form>
+    </div>
+</div>

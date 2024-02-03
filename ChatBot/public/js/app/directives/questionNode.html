@@ -1,0 +1,22 @@
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-8 pr-0">
+            <textarea class="form-control" ng-model="node.content" cols="5" rows="5" ng-blur="save_content()" ng-show="node.type == 0" placeholder="{{key == 0 && tab.index == 1 ? 'write here your first chat question' : ''}}">
+
+            </textarea>
+            <div class="employe_grid text-center" style="padding:15px;border-bottom: 3px solid #82b440;" ng-show="node.type == 1">
+                <p class="mb0">
+                    <span class="text-thm2">Input Box</span>
+                </p>
+                <div class="details">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-danger" style="width:40px;height:40px;" ng-show="node.type == 0 || node.type == 1" ng-click="remove_node(node.key)">
+                <span class="flaticon-rubbish-bin pl-0"></span>
+            </button>
+        </div>
+    </div>
+
+</div>

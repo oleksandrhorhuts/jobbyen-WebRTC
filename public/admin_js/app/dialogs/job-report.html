@@ -1,0 +1,83 @@
+<div class="bs-loading-container" bs-loading-overlay>
+    <form name="form" novalidate ng-submit="form.$valid && save()" class="mt-1">
+        <div class="row mb-2">
+            <div class="col-lg-12 d-flex">
+                <span class="fz15 bold">Detaljer</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-2 d-flex justify-content-end">
+                        <span class="fz15">JobID : </span>
+                    </div>
+                    <div class="col-lg-10 d-flex align-items-center">
+                        <span class="fz14 bold">{{selected_job.job_id}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-2 d-flex justify-content-end">
+                        <span class="fz15">Email : </span>
+                    </div>
+                    <div class="col-lg-10 d-flex align-items-center">
+                        <span class="fz14 bold">{{selected_job.email}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-2 d-flex justify-content-end">
+                        <span class="fz15">Description : </span>
+                    </div>
+                    <div class="col-lg-10 d-flex align-items-center">
+                        <span class="fz14 bold">{{selected_job.report_description}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-2 d-flex justify-content-end">
+                        <span class="fz15">Reason : </span>
+                    </div>
+                    <div class="col-lg-10 d-flex align-items-center">
+                        <div class="row">
+                            <div class="col-lg-12" ng-if="selected_job.report_option[0].status">
+                                <span class="fz13">Jobbet er ikke ledigt <i class="fa fa-check"></i></span>
+                            </div>
+                            <div class="col-lg-12" ng-if="selected_job.report_option[1].status">
+                                <span class="fz13">Der er fejl i teksten <i class="fa fa-check"></i></span>
+                            </div>
+                            <div class="col-lg-12" ng-if="selected_job.report_option[2].status">
+                                <span class="fz13">Der er tekniske fejl/noget der ikke virker <i class="fa fa-check"></i></span>
+                            </div>
+                            <div class="col-lg-12" ng-if="selected_job.report_option[3].status">
+                                <span class="fz13">Andet <i class="fa fa-check"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-2 d-flex justify-content-end">
+                        <span class="fz15">Opret  : </span>
+                    </div>
+                    <div class="col-lg-10 d-flex align-items-center">
+                        <span class="fz14 bold">{{selected_job.created_at | amUtc | amLocal | amDateFormat:"DD.MM.YYYY"}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-4 d-flex">
+                <button type="button" class="btn btn-success w-100 mr-2 shadow-none" style="font-size: 13px" ng-click="start_interview()" ng-disabled="selected_event.ready!=2" ng-if="user_type == 2">
+                    <i class="fa fa-video-camera"></i> {{button_name(selected_event.ready)}}
+                </button>
+                <button type="button" class="btn btn-danger w-100 mr-2 shadow-none" ng-click="remove(selected_event.interview_id)" ng-if="user_type == 2"><i class="fa fa-trash"></i> Slet</button>
+            </div>
+            <div class="col-lg-8"></div>
+        </div>
+    </form>
+</div>

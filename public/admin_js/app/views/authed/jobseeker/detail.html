@@ -1,0 +1,112 @@
+<div class="col-lg-12 text-center mt30 indeterminate-loading" ng-if="indeterminate">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="c01341">
+        <circle cx="50" cy="50" r="45" class="c01345" />
+        <circle cx="50" cy="50" r="45" />
+    </svg>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight" ng-if="!indeterminate">
+
+
+    <div class="row m-b-lg m-t-lg">
+        <div class="col-md-6">
+
+            <div class="profile-image">
+                <img ng-if="jobseeker.avatar" ng-src="{{'images/photos/' + jobseeker.avatar + '.png'}}"
+                    class="img-circle circle-border m-b-md" alt="profile" style="width:150px;height:150px;">
+            </div>
+            <div class="profile-info">
+                <div class="">
+                    <div>
+                        <h2 class="no-margins">
+                            {{jobseeker.name}}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-1">
+
+        <div class="col-lg-4">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Profil</h5>
+                    <div class="ibox-tools" style="display:inline-block;">
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Adresse</td>
+                                <td class="text-right">{{jobseeker.address}}</td>
+                            </tr>
+                            <tr>
+                                <td>Postnummer og By</td>
+                                <td class="text-right">{{jobseeker.location.zip}} {{jobseeker.location.name}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>E-mail</td>
+                                <td class="text-right ">{{jobseeker.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Telefonnr./ Mobilnr.</td>
+                                <td class="text-right">{{jobseeker.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>CV ready</td>
+                                <td class="text-right">{{get_cv_ready(jobseeker.cv_ready)}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="social-feed-box">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Dokumenter</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="project-list">
+
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr ng-repeat="document in jobseeker.cv.doc">
+                                        <td class="project-title"
+                                            ng-click="downloadFile(document.realname, document.type, document.url)">
+                                            <a href="javascript:;"><i
+                                                    class="fa {{get_document_extension(document.type)}}"
+                                                    style="font-size:20px;"></i></a>
+                                            <br />
+                                        </td>
+                                        <td class="project-title"
+                                            ng-click="downloadFile(document.realname, document.type, document.url)">
+                                            <a href="javascript:;">{{document.realname}}</a>
+                                            <br />
+                                        </td>
+                                        <td class="project-title"
+                                            ng-click="downloadFile(document.realname, document.type, document.url)">
+                                            <a href="javascript:;"><i class="fa fa-clock-o"></i>
+                                                {{document.created_at | amUtc | amLocal | amDateFormat:'DD.MM.YYYY - HH:mm'}}</a>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
